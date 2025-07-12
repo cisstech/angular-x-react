@@ -1,0 +1,41 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 3);
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.form-container {
+  background-color: var(--container-background);
+  padding: calc(var(--spacing-unit) * 3);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.form-group {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-unit);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: var(--spacing-unit);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}

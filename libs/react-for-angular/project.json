@@ -1,0 +1,8 @@
+{
+  "name": "react-for-angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-for-angular/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

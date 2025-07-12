@@ -1,0 +1,79 @@
+<div class="app-container">
+  <h1>Angular ⚡ React Integration</h1>
+  <p>
+    Experience seamless integration between Angular and React components with
+    modern web technologies.
+  </p>
+
+  <!-- Example Selection -->
+  <div class="form-container">
+    <h2>Select an Example</h2>
+    <div class="form-group">
+      <label for="example-select">Choose a component to display:</label>
+      <select
+        id="example-select"
+        class="form-input"
+        [value]="selectedExample()"
+        (change)="onExampleChange($event)"
+      >
+        <option *ngFor="let example of examples" [value]="example.value">
+          {{ example.label }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Hello World Example -->
+  <div *ngIf="selectedExample() === 'hello-world'">
+    <div class="form-container">
+      <h2>Personalized Greeting</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Enter your name:</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            [value]="userName()"
+            (input)="onNameChange($event)"
+            placeholder="Your name here..."
+            class="form-input"
+            autocomplete="given-name"
+          />
+        </div>
+        <p class="current-name">
+          Greeting for: <strong>{{ userName() || 'World' }}</strong>
+        </p>
+      </form>
+    </div>
+    <react-hello-world [attr.name]="userName()" />
+  </div>
+
+  <!-- PDF Viewer Example -->
+  <div *ngIf="selectedExample() === 'pdf-viewer'">
+    <div class="form-container">
+      <h2>Dynamic PDF Viewer</h2>
+      <form>
+        <div class="form-group">
+          <label for="pdf-url">Enter PDF URL:</label>
+          <input
+            id="pdf-url"
+            name="pdf-url"
+            type="text"
+            [value]="pdfUrl()"
+            (input)="onPdfUrlChange($event)"
+            placeholder="PDF URL here..."
+            class="form-input"
+          />
+        </div>
+        <p class="current-name">
+          Viewing PDF from: <strong>{{ pdfUrl() }}</strong>
+        </p>
+      </form>
+    </div>
+    <react-pdf-viewer
+      [attr.fileUrl]="pdfUrl()"
+      [attr.width]="pdfViewerWidth()"
+    />
+  </div>
+</div>
